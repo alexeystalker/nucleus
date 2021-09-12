@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Nucleus.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "-i ../../../../../_input -o ../../../../../_site"
+    }
+  }
+}

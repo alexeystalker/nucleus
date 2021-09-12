@@ -1,0 +1,16 @@
+{
+	"pagesFolder": {
+		"path": "_pages"
+	},
+	"notesFolder": {
+		"path": "_notes",
+		"foldersToIgnore": [
+			".obsidian"
+		]
+	},
+	"layoutFolder":{
+		"path": "_Layout"
+	},
+	"siteTitle": "Test Site",
+	"indexPage": "index.md"
+}
