@@ -63,7 +63,7 @@ public class FileSystemService : IFileSystemService
 
     public async Task SaveToOutput(string subdir, SiteEntry entry)
     {
-        _log.Debug($"Process file {entry.File.Name}");
+        _log.Debug($"Saving file {entry.File.Name}");
         var pathForFile =
             Path.GetFullPath(Path.Combine(_settings.OutputDir, subdir, entry.File.RelDir, entry.File.Name));
         var content = entry.BinaryContent ?? Encoding.UTF8.GetBytes(entry.StringContent);
@@ -71,7 +71,7 @@ public class FileSystemService : IFileSystemService
         var stream = fi.Create();
         await stream.WriteAsync(content);
         await stream.FlushAsync();
-        _log.Debug($"Processing of file {entry.File.FullName} completed.");
+        _log.Debug($"Saving of file {entry.File.FullName} completed.");
     }
 
     public async Task<SiteEntry> ReadSiteEntryAsync(InputFile inputFile)
@@ -79,7 +79,8 @@ public class FileSystemService : IFileSystemService
         var ret = new SiteEntry
         {
             File = inputFile,
-            Metadata = new Dictionary<string, string>()
+            StringMetadata = new Dictionary<string, string>(),
+            ListMetadata = new Dictionary<string, List<string>>()
         };
         if(TextExtensions.Contains(inputFile.Extension))
             ret = ret with { StringContent = await File.ReadAllTextAsync(inputFile.FullName) };

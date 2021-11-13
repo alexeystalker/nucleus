@@ -1,5 +1,6 @@
 ---
 tags: [note]
+title: First note title
 ---
 # First note
 This is my first note!

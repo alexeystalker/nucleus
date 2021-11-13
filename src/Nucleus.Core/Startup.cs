@@ -19,6 +19,8 @@ namespace Nucleus.Core
 			var services = new ServiceCollection();
 			services.AddSingleton(log);
 			services.AddSingleton<IFileSystemService, FileSystemService>();
+			services.AddSingleton<IEntryProcessor, YamlProcessor>();
+			services.AddSingleton<IEntryProcessor, DummyProcessor>();
 			services.AddSingleton<StaticGenerator>();
 			services.AddSingleton(settings);
 			return services.BuildServiceProvider();
