@@ -1,8 +1,9 @@
 ﻿using Nucleus.Core.Models;
 
-namespace Nucleus.Core.Interfaces;
-
-public interface IEntryProcessor
+namespace Nucleus.Core.Interfaces
 {
-	public SiteEntry ProcessEntry(SiteEntry entry);
+	public interface IEntryProcessor
+	{
+		public SiteEntry ProcessEntry(SiteEntry entry, ProcessingContext context);
+	}
 }

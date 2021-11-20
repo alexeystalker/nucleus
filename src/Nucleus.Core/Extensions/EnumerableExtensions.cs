@@ -5,11 +5,6 @@ namespace Nucleus.Core.Extensions
 {
 	public static class EnumerableExtensions
 	{
-		public static IEnumerable<T> AsSingleItemEnumerable<T>(this T obj)
-		{
-			yield return obj;
-		}
-
 		public static Dictionary<TKey, TValue> ToDictSafe<TSource, TKey, TValue>(
 			this IEnumerable<TSource> enumerable,
 			Func<TSource, TKey> keyFunc,

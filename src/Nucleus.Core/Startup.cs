@@ -14,13 +14,14 @@ namespace Nucleus.Core
 			var generator = sp.GetService<StaticGenerator>();
 			return Task.FromResult(generator);
 		}
+
 		public static ServiceProvider ConfigureServices(NucleusSettings settings, ILog log)
 		{
 			var services = new ServiceCollection();
 			services.AddSingleton(log);
 			services.AddSingleton<IFileSystemService, FileSystemService>();
 			services.AddSingleton<IEntryProcessor, YamlProcessor>();
-			services.AddSingleton<IEntryProcessor, DummyProcessor>();
+			services.AddSingleton<IEntryProcessor, MarkdownProcessor>();
 			services.AddSingleton<StaticGenerator>();
 			services.AddSingleton(settings);
 			return services.BuildServiceProvider();

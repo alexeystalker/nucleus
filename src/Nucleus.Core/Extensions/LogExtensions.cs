@@ -1,6 +1,5 @@
 ﻿using System;
 using Nucleus.Core.Interfaces;
-using Nucleus.Core.Logging;
 
 namespace Nucleus.Core.Extensions
 {
